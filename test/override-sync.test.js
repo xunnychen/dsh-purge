@@ -7,6 +7,7 @@ import {
   ALL_PATCHES,
   commitOverrideOnApply,
   defaultOverrideText,
+  groupPatchesForDisplay,
   looksLikePluginDefault,
   seedPromptInjectAtBoot,
 } from "../lib/core.js";
@@ -99,4 +100,18 @@ test("patch 87 normalizes hang needle to LF", () => {
   const joined = (patch.replacements || []).map((row) => row.replace).join("\n");
   assert.match(joined, /replace\(\/\\r\\n\/g/);
   assert.match(joined, /\[dsh-purge-87\]/);
+});
+
+test("dead hang and official phase-1 rows are not separate patches", () => {
+  assert.equal(ALL_PATCHES.some((item) => item.id === 81), false);
+  assert.equal(ALL_PATCHES.some((item) => item.id === 89), false);
+});
+
+test("display grouping collapses hang 87+88 into one row", () => {
+  const rows = groupPatchesForDisplay(ALL_PATCHES, { 87: "applied", 88: "applied" });
+  const hang = rows.find((row) => row.id === 87);
+  assert.ok(hang);
+  assert.deepEqual(hang.ids, [87, 88]);
+  assert.equal(hang.status, "applied");
+  assert.equal(rows.some((row) => row.id === 88), false);
 });
