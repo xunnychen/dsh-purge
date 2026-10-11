@@ -21,6 +21,13 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Syntax-check plugin entry
+        run: |
+          node --check lib/index.js
+          node --check lib/core.js
+          node --check lib/reapply.js
+          node --input-type=module -e "import './lib/index.js'"
+
       - name: Publish GitHub Release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

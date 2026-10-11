@@ -1,3 +1,21 @@
+# 1.1.71
+
+## 中文
+
+- 版本 **1.1.71**。
+- 修复 1.1.70 的 `??` 混 `||`：插件启用时 `failed to import`（桌面 / Web 同一入口）。
+- #86 只改 UI 队列 steer → followup；公共 `steer()` 收回 next-step，代理间 `send_message` 仍下一步插入。
+- `installed-rev` 跨版本不再沿用旧 `apply:x.y.z`。#88 按现行 `renderedPrompt` / 旧 `system` 锚点打中的那条落标记。
+- 发版前 `node --check` 主入口，避免再把语法错误打进 Release。
+
+## English
+
+- **1.1.71**.
+- Fix 1.1.70 `??` mixed with `||`: enable failed to import on desktop and web.
+- #86 keeps UI queue steer → followup. Public `steer()` is next-step again so `send_message` inserts at the next step.
+- Stale `apply:x.y.z` in `installed-rev` refreshes across versions. #88 marks the host anchor that actually exists (`renderedPrompt` or `system`).
+- Release CI syntax-checks the plugin entry.
+
 # 1.1.70
 
 ## 中文
