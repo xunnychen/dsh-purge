@@ -34,7 +34,6 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "node --test",
     "embed-prompt": "node scripts/embed-default-prompt.mjs",
     "build:client": "node scripts/build-client.mjs"
   },
