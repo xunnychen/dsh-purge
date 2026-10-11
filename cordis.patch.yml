@@ -30,12 +30,16 @@
     personaPrefix: ""
     personaSuffix: Your working directory is {{cwd}}.
 
+- id: dsh-purge
+  inject: [systemPrompt, tools]
+
 - insert:
     - id: dsh-purge
       name: 'dsh-purge'
+      inject: [systemPrompt, tools]
       config:
         enabled: true
-        autoApplyOnStart: true
+        autoApplyOnStart: false
         autoUpdateOnStart: false
         autoRevertOnMissing: false
         injectOnce: false
