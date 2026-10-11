@@ -442,7 +442,6 @@ DSH 会按顺序执行同一批中的 Bash 调用。旧版 dsh-purge 把默认�
 ## 本地校验
 
 ```sh
-npm test
 node --check lib/index.js
 node --check lib/core.js
 node --check lib/rewind.js

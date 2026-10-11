@@ -429,7 +429,6 @@ The box sits under Prompt. If the dock does not show it yet, quit DeepSeek Harne
 ## Local checks
 
 ```sh
-npm test
 node --check lib/index.js
 node --check lib/core.js
 node --check lib/surface.js
