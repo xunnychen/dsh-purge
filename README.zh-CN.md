@@ -114,6 +114,12 @@ Harness 不只是把问题交给模型。它还会在运行时改提示词、审
   <img src="docs/notice/laozhang-live-2.jpg" width="360" alt="老张的ai 直播收钱">
 </p>
 
+对方微信名 **「老张的ai科技」**，直播间观众榜同号。被问到是不是本仓库开发者时，自称「老厉害了」；作者当场表示要投诉。
+
+<p align="center">
+  <img src="docs/notice/laozhang-wechat-1.jpg" width="420" alt="老张的ai科技 微信自称开发者">
+</p>
+
 ---
 
 ### ⚠️ 严正法律免责与合规使用声明

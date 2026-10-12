@@ -110,6 +110,12 @@ Recorded 2026-10-12:
   <img src="docs/notice/laozhang-live-2.jpg" width="360" alt="老张的ai live charging money">
 </p>
 
+WeChat name **「老张的ai科技」**, same handle as the live-room viewer board. Asked if they were this repo's developer, they said they were. The author said they would report it.
+
+<p align="center">
+  <img src="docs/notice/laozhang-wechat-1.jpg" width="420" alt="老张的ai科技 WeChat claiming to be the developer">
+</p>
+
 ---
 
 <a id="strict-legal--compliance-disclaimer"></a>
