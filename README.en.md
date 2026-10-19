@@ -29,13 +29,13 @@
   <a href="README.md">中文</a> · <a href="README.en.md"><strong>English</strong></a>
 </p>
 
-> **Plainly.**
+> I'll say it straight.
 >
-> I was laid off. There is no steady income. This repo was always nights-and-weekends. I may be out delivering food next; time gets spent on rent, not patches.
+> I got laid off. No job, no steady income. I always wrote this repo after hours. I may end up delivering food just to eat. I probably won't be able to patch this every day.
 >
-> **Seven days, through 26 Oct 2026.** Say it, swear, buy an ad, or sponsor — write it on [Issue #130](https://github.com/YuJunZhiXue/dsh-purge/issues/130). I will read. I will not answer every comment.
+> **Seven days, through 26 Oct 2026. That's the window I'm leaving open.** Stay, swear, buy an ad, or sponsor — write it on [Issue #130](https://github.com/YuJunZhiXue/dsh-purge/issues/130). I'll read. I won't answer every comment.
 >
-> **From 27 Oct this repo goes closed-source.** No new GitHub releases. Later builds ship only here: [t.me/LLM_PoJia/271](https://t.me/LLM_PoJia/271). Old published versions still run. The license is commercial now; see below.
+> **From 27 Oct I'm closing this repo.** I won't ship new versions on GitHub. Later builds I only put here: [t.me/LLM_PoJia/271](https://t.me/LLM_PoJia/271). Copies you already downloaded still run. I also changed the license. It's commercial now; see below.
 
 > **Official Web and the official desktop app are both supported.** Official `dsh web` uses profile `web`. The official desktop EXE (DeepSeek Harness **0.2.0-rc.2 / 0.2.1-rc.2**) uses profile `desktop`. Install and Apply them separately. This release targets dsh 0.2 only. Older dsh builds need the matching older plugin. Community Desktop is not maintained.
 >
@@ -81,25 +81,25 @@ If this project helps you, send it over — I'm out here asking~
 
 ## Ad slots
 
-This README gets steady traffic. A few placements are open; proceeds go toward after-hours upkeep.
+People actually read this README. I'm opening a few slots. The money goes toward keeping me able to maintain this.
 
 | Placement | Status |
 | --- | --- |
 | Above the sponsor block (text link + one-line blurb, or a small image) | **Open** |
 
-Slots are limited and go live after we agree. No gray-market, piracy, impersonation of this repo, or pure traffic-farm listings.
+Few slots. I put them up after we agree. Gray-market, piracy, impersonating this repo, or pure traffic farms: I don't take those.
 
-For placement, email [a2269198325@163.com](mailto:a2269198325@163.com) or message [@YuJunZhiXue](https://github.com/YuJunZhiXue) on GitHub. Put `dsh-purge ad slot` in the subject.
+Email [a2269198325@163.com](mailto:a2269198325@163.com) or message [@YuJunZhiXue](https://github.com/YuJunZhiXue) on GitHub. Subject: `dsh-purge ad slot`.
 
-These seven days are also the last public call. The note is here: [Issue #130](https://github.com/YuJunZhiXue/dsh-purge/issues/130). Deadline **26 Oct 2026**. After that the repo closes; new versions only on the [channel](https://t.me/LLM_PoJia/271).
+These seven days are also the last public call. What I want to say is here: [Issue #130](https://github.com/YuJunZhiXue/dsh-purge/issues/130). Deadline **26 Oct 2026**. After that I close the source. New versions only on the [channel](https://t.me/LLM_PoJia/271).
 
 ---
 
 ## What this is
 
-**dsh-purge** is a cybersecurity red-team plugin for the official [DeepSeek Harness](https://www.deepseek.com/harness/) already installed on your machine. Official **Web** (`dsh web`) and the official **desktop EXE** are both supported. Install and Apply them separately.
+I wrote this plugin. You install it on the official [DeepSeek Harness](https://www.deepseek.com/harness/) already on your machine, for cybersecurity red-team evaluation. I support official **Web** (`dsh web`) and the official **desktop EXE**. You install and Apply them separately.
 
-Harness does more than forward a prompt. It rewrites prompts, approval gates, sandbox policy, and session migration at runtime. Asking only “will the model answer” treats a host-layer block as a model refusal. This plugin separates those two layers on your own install, for controlled evaluation and for seeing which default policy is too tight.
+Harness does more than forward a prompt. It rewrites prompts, approval gates, sandbox policy, and session migration at runtime. Asking only “will the model answer” treats a host-layer block as a model refusal. My plugin splits those two layers on your own install, for controlled evaluation and for seeing which default policy is too tight.
 
 | You get | What it does |
 |---|---|
@@ -111,40 +111,40 @@ Harness does more than forward a prompt. It rewrites prompts, approval gates, sa
 
 No hardcoded drive letters. It looks at `$DSH_HOME`, `.dsh` next to the dsh launcher, then `~/.dsh`. It does not patch the Harness source tree. **Apply** on the **Clean** page of **dsh-purge** is what writes the changes. Identity comes from the encrypted prompt shipped in the plugin, the text the prompt box shows by default. The host prompt file is not read.
 
-It only touches the official `@deepseek-ai` packages and local config on the user's machine. It is not a public scanner and not an attack kit for third-party sites. The repo does not ship malware, unauthorized-exploit scripts, or payloads aimed at the public internet.
+My plugin only touches the official `@deepseek-ai` packages and local config already on your machine. It is not a public scanner and not a kit for hitting someone else's site. There is no malware in this repo, and no payload aimed at the public internet.
 
 ---
 
-## Install it for yourself. Selling it, teaching it as a paid course, or white-labeling it: buy a [commercial license](./LICENSE-COMMERCIAL.md) first.
+## Install it for yourself. Selling it, teaching it as a paid course, or white-labeling it: buy a [commercial license](./LICENSE-COMMERCIAL.md) from me first.
 
 ## Attribution required
 
-**If you borrow this project's name, ideas, code, or prompts, you must credit the author and name the source repository:** [YuJunZhiXue/dsh-purge](https://github.com/YuJunZhiXue/dsh-purge).
+If you use this project's name, ideas, code, or prompts, you credit me and you name the source repository: [YuJunZhiXue/dsh-purge](https://github.com/YuJunZhiXue/dsh-purge).
 
-Using them without attribution, hiding the source, or passing them off as your own will be pursued.
+No credit, hiding the source, or passing it off as yours: I will pursue that.
 
 ---
 
 ## License
 
-From this version the [LICENSE](./LICENSE) is a **proprietary commercial license**. All rights reserved. It is not open source.
+From this version the [LICENSE](./LICENSE) is the commercial license I wrote. I keep all rights. **This is not open source, and it is not MIT.**
 
 | What you want | Where |
 | --- | --- |
 | Install a copy you already have, on your own machine | Allowed; see [LICENSE](./LICENSE) |
-| Paid plugin / course / white-label / sell it as a product | Buy a grant first: [LICENSE-COMMERCIAL.md](./LICENSE-COMMERCIAL.md) |
-| Git tags / tarballs from before the switch | still [MIT](./LICENSE-MIT.md); those copies cannot be clawed back |
-| Builds after 27 Oct 2026 | only [t.me/LLM_PoJia/271](https://t.me/LLM_PoJia/271) |
+| Paid plugin / course / white-label / sell it as a product | Buy a grant from me first: [LICENSE-COMMERCIAL.md](./LICENSE-COMMERCIAL.md) |
+| Git tags / tarballs from before the switch | those went out under MIT; I cannot claw them back |
+| Builds after 27 Oct 2026 | I only ship them at [t.me/LLM_PoJia/271](https://t.me/LLM_PoJia/271) |
 
-People who wrote code are listed in [CONTRIBUTORS.md](./CONTRIBUTORS.md). Thank you. This will not be maintained as a public GitHub open-source repo after the cutoff.
+To everyone who wrote code: thank you. After the cutoff I will not keep this as a public GitHub open-source repo.
 
 ---
 
 ## Unauthorized commercial use
 
-Douyin live account **「老张的ai」** (room name **「老张AI讲堂」**) is selling this repository: taking fees in the live room, no attribution, claiming to be the author. I was in the room. They still charged.
+Douyin live account **「老张的ai」** (room name **「老张AI讲堂」**) is selling my repository: taking fees in the live room, no attribution, claiming to be the author. I was in the room. They still charged.
 
-The commercial license does not allow selling this repo as a paid product. Selling courses, the plugin, tokens, or reselling it needs a paid grant; otherwise the license ends on the spot. Old MIT tags cannot be clawed back. Passing yourself off as the author, or dropping attribution, can still be pursued.
+The commercial license does not allow selling this repo as a paid product. Selling courses, the plugin, tokens, or reselling it: buy a grant from me first, or the license ends on the spot. Old MIT tags I cannot claw back. Passing yourself off as me, or dropping attribution, I still pursue.
 
 Recorded 2026-10-12:
 
@@ -153,7 +153,7 @@ Recorded 2026-10-12:
   <img src="docs/notice/laozhang-live-2.jpg" width="360" alt="老张的ai live charging money">
 </p>
 
-WeChat name **「老张的ai科技」**, same handle as the live-room viewer board. Asked if they were this repo's developer, they said they were. The author said they would report it.
+WeChat name **「老张的ai科技」**, same handle as the live-room viewer board. Asked if they were this repo's developer, they said they were. I said I would report it.
 
 <p align="center">
   <img src="docs/notice/laozhang-wechat-1.jpg" width="420" alt="老张的ai科技 WeChat claiming to be the developer">
@@ -613,9 +613,9 @@ If nothing is found, set `DSH_BASE` / `DSH_DESKTOP_INSTALL`. No files are change
 
 ## Releases
 
-**Through 26 Oct 2026:** this version's notes and packages are still in this repo / [Releases](https://github.com/YuJunZhiXue/dsh-purge/releases).
+**Through 26 Oct 2026:** this version's notes and packages are still in my repo / [Releases](https://github.com/YuJunZhiXue/dsh-purge/releases).
 
-**From 27 Oct:** GitHub will not ship new packages. Later versions exist only at [t.me/LLM_PoJia/271](https://t.me/LLM_PoJia/271). If it is not in that channel, I did not publish it.
+**From 27 Oct:** I will not ship new packages on GitHub. Later versions exist only at [t.me/LLM_PoJia/271](https://t.me/LLM_PoJia/271). If it is not in that channel, I did not publish it.
 
 ## Notes
 
