@@ -4,7 +4,7 @@
 
 <h1 align="center">⚔️ DeepSeek Harness cybersecurity red-team tool (dsh-purge)</h1>
 
-<p align="center"><strong>Version 1.1.71</strong></p>
+<p align="center"><strong>Version 1.1.74</strong></p>
 
 <p align="center">
   <em>DeepSeek Harness jailbreak: every model, swap prompts per model. Default prompt for 小码酱. Please star ⭐ If you build on this, see Attribution required.</em>
@@ -12,10 +12,10 @@
 
 <p align="center">
   <a href="https://github.com/YuJunZhiXue/dsh-purge/stargazers"><img src="https://img.shields.io/github/stars/YuJunZhiXue/dsh-purge?logo=github&label=Stars" alt="GitHub stars"></a>
-  <a href="https://github.com/YuJunZhiXue/dsh-purge/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-65a30d?style=flat" alt="MIT license"></a>
+  <a href="https://github.com/YuJunZhiXue/dsh-purge/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-Commercial-c45c26?style=flat" alt="Commercial license"></a>
   <a href="https://awesome-dsh-plugin.com"><img src="https://awesome-dsh-plugin.com/badge.svg" alt="awesome · DSH plugin"></a>
   <a href="https://deepseek.stream/plugins/dsh-purge"><img src="https://img.shields.io/badge/Hub-dsh--purge-1a73e8" alt="DeepSeek Harness Hub"></a>
-  <a href="https://www.deepseek.com/harness/"><img src="https://img.shields.io/badge/dsh-0.2.0--rc.2-blue" alt="DSH"></a>
+  <a href="https://www.deepseek.com/harness/"><img src="https://img.shields.io/badge/dsh-0.2.0--rc.2%20%2F%200.2.1--rc.2-blue" alt="DSH"></a>
   <br>
   <img src="https://img.shields.io/badge/Node.js-%3E%3D18-339933?logo=node.js&logoColor=fff" alt="Node.js">
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000" alt="JavaScript">
@@ -29,17 +29,19 @@
   <a href="README.md">中文</a> · <a href="README.en.md"><strong>English</strong></a>
 </p>
 
-> **Maintenance paused.**
+> **Plainly.**
 >
-> Work has to come first for a while, so this project is on hold: no new releases, issues / PRs are not being triaged, and newer dsh versions are not guaranteed. What is already published stays usable. When maintenance resumes, it will be noted at the top of this README.
+> I was laid off. There is no steady income. This repo was always nights-and-weekends. I may be out delivering food next; time gets spent on rent, not patches.
 >
-> This has always been an after-hours project. If it helped you, the [sponsor](#sponsor) addresses are below. README [ad slots](#ad) are also open, to help keep the lights on.
+> **Seven days, through 26 Oct 2026.** Say it, swear, buy an ad, or sponsor — write it on [Issue #130](https://github.com/YuJunZhiXue/dsh-purge/issues/130). I will read. I will not answer every comment.
+>
+> **From 27 Oct this repo goes closed-source.** No new GitHub releases. Later builds ship only here: [t.me/LLM_PoJia/271](https://t.me/LLM_PoJia/271). Old published versions still run. The license is commercial now; see below.
 
-> **Official Web and the official desktop app are both supported.** Official `dsh web` uses profile `web`. The official desktop EXE (DeepSeek Harness **0.2.0-rc.2**) uses profile `desktop`. Install and Apply them separately. This release targets dsh 0.2 only. Older dsh builds need the matching older plugin. Community Desktop is not maintained.
+> **Official Web and the official desktop app are both supported.** Official `dsh web` uses profile `web`. The official desktop EXE (DeepSeek Harness **0.2.0-rc.2 / 0.2.1-rc.2**) uses profile `desktop`. Install and Apply them separately. This release targets dsh 0.2 only. Older dsh builds need the matching older plugin. Community Desktop is not maintained.
 >
 > Adding the plugin to a profile does not patch the host. Click **dsh-purge** beside the session title → **Clean** → **Apply**. A successful Apply restarts; an unfinished Apply does not. After the restart, start a new chat — that is when the inject enters the session.
 >
-> Node.js **≥18**. Windows no-flash needs **Node ≥22**. Hub one-click and the commands below both install the npm package `dsh-purge`.
+> Node.js **≥18**. Windows no-flash needs **Node ≥22**. There is no `dsh-purge` package on npm. Until 26 Oct, install from the GitHub archive below; do not `pnpm add dsh-purge`. After 27 Oct, only the [channel](https://t.me/LLM_PoJia/271) counts.
 
 ## Contents
 
@@ -47,6 +49,7 @@
 - [Ad slots](#ad)
 - [What this is](#what-this-is)
 - [Attribution required](#attribution-required)
+- [License](#license)
 - [Unauthorized commercial use](#unauthorized-commercial-use)
 - [Supported hosts](#supported-hosts)
 - [Install](#install)
@@ -88,6 +91,8 @@ Slots are limited and go live after we agree. No gray-market, piracy, impersonat
 
 For placement, email [a2269198325@163.com](mailto:a2269198325@163.com) or message [@YuJunZhiXue](https://github.com/YuJunZhiXue) on GitHub. Put `dsh-purge ad slot` in the subject.
 
+These seven days are also the last public call. The note is here: [Issue #130](https://github.com/YuJunZhiXue/dsh-purge/issues/130). Deadline **26 Oct 2026**. After that the repo closes; new versions only on the [channel](https://t.me/LLM_PoJia/271).
+
 ---
 
 ## What this is
@@ -110,7 +115,7 @@ It only touches the official `@deepseek-ai` packages and local config on the use
 
 ---
 
-## Non-profit public project. Commercial sale, paid resale, and profit from illegal or gray-market activity are forbidden. For technical reference only.
+## Install it for yourself. Selling it, teaching it as a paid course, or white-labeling it: buy a [commercial license](./LICENSE-COMMERCIAL.md) first.
 
 ## Attribution required
 
@@ -120,11 +125,26 @@ Using them without attribution, hiding the source, or passing them off as your o
 
 ---
 
+## License
+
+From this version the [LICENSE](./LICENSE) is a **proprietary commercial license**. All rights reserved. It is not open source.
+
+| What you want | Where |
+| --- | --- |
+| Install a copy you already have, on your own machine | Allowed; see [LICENSE](./LICENSE) |
+| Paid plugin / course / white-label / sell it as a product | Buy a grant first: [LICENSE-COMMERCIAL.md](./LICENSE-COMMERCIAL.md) |
+| Git tags / tarballs from before the switch | still [MIT](./LICENSE-MIT.md); those copies cannot be clawed back |
+| Builds after 27 Oct 2026 | only [t.me/LLM_PoJia/271](https://t.me/LLM_PoJia/271) |
+
+People who wrote code are listed in [CONTRIBUTORS.md](./CONTRIBUTORS.md). Thank you. This will not be maintained as a public GitHub open-source repo after the cutoff.
+
+---
+
 ## Unauthorized commercial use
 
-Douyin live account **「老张的ai」** (room name **「老张AI讲堂」**) is selling this repository: taking fees in the live room, no attribution, and ignoring the non-profit rule above. The author was in the room. They still charged.
+Douyin live account **「老张的ai」** (room name **「老张AI讲堂」**) is selling this repository: taking fees in the live room, no attribution, claiming to be the author. I was in the room. They still charged.
 
-This project is free and non-profit. Selling courses, the plugin, tokens, or reselling it voids the license on the spot. The author reserves the right to pursue it.
+The commercial license does not allow selling this repo as a paid product. Selling courses, the plugin, tokens, or reselling it needs a paid grant; otherwise the license ends on the spot. Old MIT tags cannot be clawed back. Passing yourself off as the author, or dropping attribution, can still be pursued.
 
 Recorded 2026-10-12:
 
@@ -149,7 +169,7 @@ WeChat name **「老张的ai科技」**, same handle as the live-room viewer boa
 
 <font color="red">
 
-**Disclaimer:** This is a non-profit open-source project. It follows applicable laws and the rules of the platforms it uses, and is intended only for learning and research. Do not use it for any illegal or non-compliant purpose; the user bears any resulting consequences.
+**Disclaimer:** This project is offered under a commercial license. It used to be MIT on GitHub; that is changing, and the repo will close. Follow applicable laws and platform rules. Do not use it for illegal purposes; the user bears the consequences.
 
 **Zero-tolerance statement:** This project opposes and forbids any illegal activity. The authors do not support, encourage, or assist unauthorized network attacks, exploit use, data theft, unlawful intrusion into computer information systems, or generation of illegal or prohibited content. **Anyone who uses this project for crime is solely responsible under the law. The authors have no liability.**
 
@@ -168,9 +188,9 @@ WeChat name **「老张的ai科技」**, same handle as the live-room viewer boa
    - Unauthorized intrusion or attacks on public or private computer information systems; extortion, sabotage, credential stuffing, or spreading malicious payloads;
    - Inducing, generating, or spreading any content the law forbids, including threats to national security, terrorism, violence, pornography, gambling, fraud, and privacy or intellectual-property infringement;
    - Violating the model provider's terms of service and acceptable-use policy.
-7. **The user bears all responsibility.** The project is provided under the MIT license as-is. The authors make no warranty of completeness, security, or fitness. **Users independently bear all civil, administrative, and criminal liability** for download, deploy, run, modify, distribute, and all resulting inputs and outputs. Authors and contributors bear no direct, indirect, or joint liability for abuse.
-8. **The license ends on breach.** Anyone who uses this project for illegal attacks, malicious activity, or other violations has their open-source license **automatically and irrevocably terminated** from the moment of the violation. They must stop using the project, permanently destroy all copies and derivatives, and accept legal sanctions.
-9. **No affiliation.** This is an independent open-source security-eval research project. It has no employment, commercial, authorization, or endorsement relationship with DeepSeek or its affiliates. "Official" here only means the eval target is the official DeepSeek Harness package on the user's machine. It does **not** mean DeepSeek developed, approved, or warrants this plugin.
+7. **The user bears all responsibility.** The project is provided under the commercial license (older releases under the MIT license then in effect) as-is. The authors make no warranty of completeness, security, or fitness. **Users independently bear all civil, administrative, and criminal liability** for download, deploy, run, modify, distribute, and all resulting inputs and outputs. Authors and contributors bear no direct, indirect, or joint liability for abuse.
+8. **The license ends on breach.** Anyone who uses this project for illegal attacks, malicious activity, unauthorized resale, or other violations has their license **automatically and irrevocably terminated** from the moment of the violation. They must stop using the project, permanently destroy all copies and derivatives, and accept legal sanctions.
+9. **No affiliation.** This is an independent security-eval research project. It has no employment, commercial, authorization, or endorsement relationship with DeepSeek or its affiliates. "Official" here only means the eval target is the official DeepSeek Harness package on the user's machine. It does **not** mean DeepSeek developed, approved, or warrants this plugin.
 10. **Attribution is required.** If you borrow this project's name, ideas, code, or prompts, you must credit the author and name this repository. Failure to attribute will be pursued. See [Attribution required](#attribution-required).
 
 </font>
@@ -183,7 +203,7 @@ WeChat name **「老张的ai科技」**, same handle as the live-room viewer boa
 
 The latest plugin supports **dsh 0.2** only — do not apply it to 0.1.x.
 
-- **dsh 0.2** (official desktop **0.2.0-rc.2** / official `dsh web`): use **1.1.40** or newer. This page installs that line.
+- **dsh 0.2** (official desktop **0.2.0-rc.2 / 0.2.1-rc.2** / official `dsh web`): use **1.1.40** or newer. This page installs that line.
 - **dsh 0.1.7** (incl. rc.1 / rc.2): use **1.1.39** or older — pick the tag on [Releases](https://github.com/YuJunZhiXue/dsh-purge/releases).
 
 Unmatched patches stay pending or skipped; nothing is rewritten blindly.
@@ -197,23 +217,23 @@ Web and the official desktop EXE are the two maintained hosts. **Install both. A
 **Web (official `dsh web`)**
 
 ```sh
-dsh plugin --profile web add dsh-purge
+dsh plugin --profile web add https://github.com/YuJunZhiXue/dsh-purge/archive/refs/heads/master.tar.gz
 ```
 
 **Desktop (official EXE)**
 
 ```sh
-dsh plugin --profile desktop add dsh-purge
+dsh plugin --profile desktop add https://github.com/YuJunZhiXue/dsh-purge/archive/refs/heads/master.tar.gz
 ```
 
-If this directory is already a clone, use `add .` instead of the package name. If `dsh` is not on PATH, use [Manual install](#manual). Registry blocked: add `https://github.com/YuJunZhiXue/dsh-purge/archive/refs/heads/master.tar.gz` with the same `--profile`.
+If this directory is already a clone, use `add .` instead of the archive URL. If `dsh` is not on PATH, use [Manual install](#manual).
 
-Hub one-click on [dsh-plugin.org](https://dsh-plugin.org/plugins/yujunzhixue/dsh-purge) searches npm for this repository and installs `dsh-purge`. The catalog line may still show `github:` — use the command above if the button falls back to git.
+Hub one-click on [dsh-plugin.org](https://dsh-plugin.org/plugins/yujunzhixue/dsh-purge) still 404s if it looks up the npm package name. Use the GitHub archive commands above.
 
 For the desktop client you can also click the button (`dsh://` deep link):
 
 <p align="center">
-  <a href="dsh://plugin/install?id=dsh-purge&name=dsh-purge&version=1.1.71&repo=YuJunZhiXue%2Fdsh-purge&permissions=%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%2C%E6%9C%AC%E6%9C%BA%E8%A1%A5%E4%B8%81%2C%E8%AE%BE%E7%BD%AE%E9%A1%B5&downloadUrl=https%3A%2F%2Fgithub.com%2FYuJunZhiXue%2Fdsh-purge%2Farchive%2Frefs%2Fheads%2Fmaster.tar.gz"><strong>Install in desktop client</strong></a>
+  <a href="dsh://plugin/install?id=dsh-purge&name=dsh-purge&version=1.1.74&repo=YuJunZhiXue%2Fdsh-purge&permissions=%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%2C%E6%9C%AC%E6%9C%BA%E8%A1%A5%E4%B8%81%2C%E8%AE%BE%E7%BD%AE%E9%A1%B5&downloadUrl=https%3A%2F%2Fgithub.com%2FYuJunZhiXue%2Fdsh-purge%2Farchive%2Frefs%2Fheads%2Fmaster.tar.gz"><strong>Install in desktop client</strong></a>
 </p>
 
 ### After the command: three steps
@@ -243,18 +263,18 @@ Paste the block below to a local assistant. It should only run the install comma
 
 Install the DeepSeek Harness plugin `dsh-purge` into both the Web profile and the official desktop profile. Do not scan the whole disk, do not read or edit other files, do not apply settings, and do not restart the app.
 
-If `dsh` is not on PATH, tell the user and stop. If this directory is already a clone, use `.` instead of the package name in both commands. If the npm registry is blocked, use `https://github.com/YuJunZhiXue/dsh-purge/archive/refs/heads/master.tar.gz`. If one profile is missing, skip that command and still install the other.
+If `dsh` is not on PATH, tell the user and stop. If this directory is already a clone, use `.` instead of the archive URL in both commands. If one profile is missing, skip that command and still install the other. There is no npm package; do not `pnpm add dsh-purge`.
 
 **Web (official `dsh web`)**
 
 ```sh
-dsh plugin --profile web add dsh-purge
+dsh plugin --profile web add https://github.com/YuJunZhiXue/dsh-purge/archive/refs/heads/master.tar.gz
 ```
 
 **Desktop (official EXE)**
 
 ```sh
-dsh plugin --profile desktop add dsh-purge
+dsh plugin --profile desktop add https://github.com/YuJunZhiXue/dsh-purge/archive/refs/heads/master.tar.gz
 ```
 
 After the commands finish, tell the user to fully quit and restart `dsh web`, and to quit the desktop tray then reopen the EXE. On each host, open **dsh-purge** beside the session title and **Apply** on **Clean**. Then stop.
@@ -593,14 +613,16 @@ If nothing is found, set `DSH_BASE` / `DSH_DESKTOP_INSTALL`. No files are change
 
 ## Releases
 
-What changed, and the zip, are on [Releases](https://github.com/YuJunZhiXue/dsh-purge/releases). To publish, bump the version in `package.json`, write Chinese and English notes in `release-notes.md`, and push `master`. Pushing the same version again does not publish another package.
+**Through 26 Oct 2026:** this version's notes and packages are still in this repo / [Releases](https://github.com/YuJunZhiXue/dsh-purge/releases).
+
+**From 27 Oct:** GitHub will not ship new packages. Later versions exist only at [t.me/LLM_PoJia/271](https://t.me/LLM_PoJia/271). If it is not in that channel, I did not publish it.
 
 ## Notes
 
 - Scope is rendered copy, defaults, and runtime logic inside local `@deepseek-ai/*` packages, plus override files and rule sets under the harness home.
 - After an upgrade, unmatched originals show as skipped. Apply still completes, and those files are left unchanged.
 - Third-party plugin *source repos* outside `@deepseek-ai` are left alone (CMD silence may **best-effort** patch installed doctor / market / liangshen / mnemon at runtime).
-- Install the npm package `dsh-purge`: `dsh plugin --profile web add dsh-purge` or `dsh plugin --profile desktop add dsh-purge`. From this repo, `add .`. If the registry is blocked, add the master.tar.gz URL instead. Hub one-click uses the same npm package.
+- Until 26 Oct you may still install from the GitHub archive, not npm: `dsh plugin --profile web add https://github.com/YuJunZhiXue/dsh-purge/archive/refs/heads/master.tar.gz` (use profile `desktop` for the EXE). From this repo, `add .`. After 27 Oct, only packages in the [channel](https://t.me/LLM_PoJia/271) count.
 
 ---
 
