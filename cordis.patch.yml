@@ -28,7 +28,12 @@
   config:
     includeHarnessIdentity: false
     personaPrefix: ""
-    personaSuffix: Your working directory is {{cwd}}.
+    # 这里绝对不能写 {{cwd}}：DSH 0.2.1 起不再注册 cwd 提示词变量（工作目录改由
+    # runtime context 每轮给出），未注册变量在渲染阶段是硬错误 —— 整轮 failed，
+    # unknown prompt variable "{{cwd}}" in section "deployment:persona-suffix"。
+    # 工作目录句改由 lib/identity.js 按宿主这次组装实际注册的变量表决定，
+    # 宿主注册 cwd（< 0.2.1）才注入，0.2.1+ 一律留空。
+    personaSuffix: ""
 
 - id: dsh-purge
   inject: [systemPrompt, tools]
@@ -54,6 +59,9 @@
         continueText: "继续"
         capabilityProtocol: true
         hooksDenyBypass: true
+        # 工作目录句（persona-suffix）开关：默认 true，但只有宿主注册了 cwd 变量才真注入。
+        # 设为 false 时提示词里完全不出现工作目录句（老宿主一并清掉）。
+        cwdSuffix: true
 
     # 演练台：预设 + 技能落地（本插件 lib/redteam）
     - id: dsh-purge-redteam

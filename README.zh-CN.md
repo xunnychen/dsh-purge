@@ -4,7 +4,7 @@
 
 <h1 align="center">⚔️ DeepSeek Harness 网络安全红队工具（dsh-purge）</h1>
 
-<p align="center"><strong>Version 1.1.71</strong></p>
+<p align="center"><strong>Version 1.1.72</strong></p>
 
 <p align="center">
   <em>DeepSeek Harness 破甲：让所有模型都能破甲，不同模型可换不同提示词；默认提示词面向国模「小码酱」。Jailbreak for every model — swap prompts per model. 求 Star 收藏 ⭐ 如要二开，请查看署名要求部分</em>
@@ -230,7 +230,7 @@ dsh plugin --profile desktop add https://github.com/YuJunZhiXue/dsh-purge/archiv
 [插件市场](https://dsh-plugin.org/plugins/yujunzhixue/dsh-purge) 一键若仍去拉 npm 包名会 404，用上面的 GitHub 归档命令。桌面客户端也可以点按钮（`dsh://` 唤起，下载地址已是 GitHub）：
 
 <p align="center">
-  <a href="dsh://plugin/install?id=dsh-purge&name=dsh-purge&version=1.1.71&repo=YuJunZhiXue%2Fdsh-purge&permissions=%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%2C%E6%9C%AC%E6%9C%BA%E8%A1%A5%E4%B8%81%2C%E8%AE%BE%E7%BD%AE%E9%A1%B5&downloadUrl=https%3A%2F%2Fgithub.com%2FYuJunZhiXue%2Fdsh-purge%2Farchive%2Frefs%2Fheads%2Fmaster.tar.gz"><strong>唤起客户端一键安装</strong></a>
+  <a href="dsh://plugin/install?id=dsh-purge&name=dsh-purge&version=1.1.72&repo=YuJunZhiXue%2Fdsh-purge&permissions=%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E8%AF%8D%E6%B3%A8%E5%85%A5%2C%E6%9C%AC%E6%9C%BA%E8%A1%A5%E4%B8%81%2C%E8%AE%BE%E7%BD%AE%E9%A1%B5&downloadUrl=https%3A%2F%2Fgithub.com%2FYuJunZhiXue%2Fdsh-purge%2Farchive%2Frefs%2Fheads%2Fmaster.tar.gz"><strong>唤起客户端一键安装</strong></a>
 </p>
 
 ### 装完都要做这三步
@@ -378,7 +378,16 @@ dsh-purge --uninstall
         verbose: false
         postPromptOrder: 5100
         postPrompt: ""
+        # 工作目录句（persona-suffix）开关，默认 true
+        cwdSuffix: true
 ```
+
+> **`cwdSuffix`（1.1.72 起）**：DSH 0.2.1 起宿主不再注册 `{{cwd}}` 提示词变量，工作目录改由
+> runtime context 每轮给出；未注册的 `{{cwd}}` 在渲染阶段是**硬错误**（整轮 failed：
+> `unknown prompt variable "{{cwd}}" in section "deployment:persona-suffix"`）。
+> 所以这句不再写死：宿主注册了 `cwd`（< 0.2.1）才注入，0.2.1+ 一律不写。
+> 想彻底不要工作目录句（含老宿主）就设 `cwdSuffix: false`，或写成 `identity.cwdSuffix: false`，两者等价。
+> 宿主自己注册的、会被插值的段落与运行时上下文里若残留 `{{cwd}}`，插件也会在组装时清掉，避免整轮崩在模型请求之前。
 
 ---
 

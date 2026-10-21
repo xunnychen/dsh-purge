@@ -25,7 +25,10 @@
 # ── identity ────────────────────────────────────────────────────────────────
 
 # The preset's own persona, shadowing the deployment default for this agent.
-# `{{model}}` and `{{cwd}}` resolve from the agent's own route and workspace.
+# `{{model}}` resolves from the agent's own route. Do NOT write `{{cwd}}` here:
+# DSH 0.2.1 stopped registering that prompt variable (the working directory now
+# arrives through the runtime context), and an unresolved reference is a hard
+# rendering error that fails the whole turn.
 - id: persona
   name: '@deepseek-ai/dsh-persona'
   config:

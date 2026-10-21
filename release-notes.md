@@ -1,3 +1,72 @@
+# 1.1.72
+
+## 中文
+
+- 版本 **1.1.72**。
+- 修 #143：DSH 0.2.1 起宿主不再注册 `{{cwd}}` 提示词变量（工作目录改由 runtime context 每轮给出），
+  而 `cordis.patch.yml` 的 `personaSuffix` 和 `lib/identity.js` 的 `CWD_ONLY_SUFFIX` 还在写
+  `Your working directory is {{cwd}}.`。未注册变量在渲染阶段是硬错误，于是每一轮都在发出模型请求前失败：
+  `unknown prompt variable "{{cwd}}" in section "deployment:persona-suffix"; registered variables: provider, model`。
+- 不再写死这句：按这次组装真正注册的变量表（`assembled.variables`）决定。宿主注册 `cwd`（< 0.2.1）才注入，
+  0.2.1+ 一律不写，目录信息交给 runtime context；变量表缺失时按「没有 cwd」处理。
+- 探测不只看键：`cwd` 的值必须是这次组装解析出的非空字符串。宿主对「有键但值为 `undefined`」抛的是
+  `has no value for this assembly`，同样会让整轮失败；空串还会留下 "Your working directory is ." 这种残句。
+- 新增开关 `cwdSuffix`（别名 `identity.cwdSuffix`），默认 `true`。设 `false` 后提示词里彻底不出现工作目录句，
+  老宿主一并清掉。
+- 组装时清掉**会被插值**的段落与运行时上下文（contexts）里残留的 `{{cwd}}`（目录样板整行丢弃，句中只摘占位符，
+  缩进/列表结构不动）；`interpolate: false` 的段落与上下文原样保留。同一份 `interpolate()` 同时服务
+  sections 和 contexts，只清前者等于漏一半。
+- 探测依据来自宿主源码（不是猜版本）：0.2.0-rc.2 的 `dsh-agent-loop` 用 `systemPrompt.variable("cwd", …)`
+  注册工作目录，`dsh-system-prompt` 的 `assemble()` 先把注册表算进 `assembled.variables` 再跑 waterfall，
+  所以 0.2.0 上插件在改写时能看见 `cwd`；0.2.1-rc.2 只注册 `provider` / `model`。
+- `cordis.patch.yml` 的 `personaSuffix` 改为 `""`；删掉 `lib/core.js` 里两份已无引用的
+  `Working directory: {{cwd}}.` 写入模板。
+- `package.json` 的 `dshTarget` 从 `0.2.0-rc.2` 改为 `0.2.1-rc.2`；兼容判断走运行时变量探测，不再靠版本号猜。
+- 新增 `tests/`（`npm test`，20 条）：含 0.2.1 / 旧宿主两种变量表、开关、`interpolate:false`、变量表缺失、
+  自定义段落清洗、上下文清洗、配置/`dshTarget` 断言；能定位到宿主包时再用宿主自己的 `renderPrompt()` /
+  `renderContextSections()` 复核，并反向断言修复前的写法在 0.2.1 上确实抛错。
+- README 三份的版本号与一键安装链接同步到 1.1.72，补 `cwdSuffix` 说明；`npm test` 用
+  `node --test tests/*.test.mjs`（POSIX 下由 shell 展开，任何 Node 版本都能跑；Windows 由 Node 21+ 自己展开）。
+
+## English
+
+- **1.1.72**.
+- Fixes #143: DSH 0.2.1 no longer registers the `{{cwd}}` prompt variable (the working directory now
+  arrives via the runtime context each turn), yet `cordis.patch.yml` (`personaSuffix`) and
+  `CWD_ONLY_SUFFIX` in `lib/identity.js` still emitted `Your working directory is {{cwd}}.`. An
+  unregistered variable is a hard rendering error, so every turn failed before any model request:
+  `unknown prompt variable "{{cwd}}" in section "deployment:persona-suffix"; registered variables: provider, model`.
+- The sentence is no longer hardcoded: it follows the variables actually registered for the assembly
+  (`assembled.variables`). Injected only when the host registers `cwd` (< 0.2.1); never on 0.2.1+,
+  where the runtime context carries the directory. A missing variable table counts as "no cwd".
+- The probe is stricter than key presence: the `cwd` value must be a non-empty string resolved for
+  this assembly. A key holding `undefined` makes the host throw `has no value for this assembly`
+  (same hard failure), and an empty string would leave a dangling "Your working directory is ." clause.
+- New `cwdSuffix` switch (alias `identity.cwdSuffix`), default `true`. Set it to `false` to drop the
+  working-directory sentence entirely, old hosts included.
+- Stray `{{cwd}}` is stripped from every **interpolated** section and runtime context during
+  assembly (boilerplate lines dropped whole, mid-sentence placeholders removed in place,
+  indentation/list structure preserved); `interpolate: false` sections and contexts keep their
+  literal text. The same host `interpolate()` renders both inputs, so cleaning only sections would
+  leave half the crash surface open.
+- The probe is grounded in the host sources rather than a version guess: DSH 0.2.0-rc.2's
+  `dsh-agent-loop` registered the directory with `systemPrompt.variable("cwd", …)`, and
+  `dsh-system-prompt`'s `assemble()` puts the registry into `assembled.variables` before running
+  the waterfall, so the plugin sees `cwd` there on 0.2.0; 0.2.1-rc.2 only registers
+  `provider` / `model`.
+- `cordis.patch.yml` now uses `personaSuffix: ""`; two unused `Working directory: {{cwd}}.` templates
+  were removed from `lib/core.js`.
+- `package.json` `dshTarget` moved from `0.2.0-rc.2` to `0.2.1-rc.2`; compatibility is decided by a
+  runtime variable probe instead of a version guess.
+- Adds `tests/` (`npm test`, 20 cases): 0.2.1 and legacy variable tables, the switch,
+  `interpolate:false`, a missing variable table, custom-section and context cleanup,
+  config/`dshTarget` assertions; when the host package is locatable it also replays the result
+  through the host's own `renderPrompt()` / `renderContextSections()` and asserts that the pre-fix
+  shape really throws on 0.2.1.
+- All three READMEs carry the 1.1.72 version line and install link plus the `cwdSuffix` note;
+  `npm test` runs `node --test tests/*.test.mjs` (shell-expanded on POSIX for any Node version,
+  Node 21+ expands it itself on Windows).
+
 # 1.1.71
 
 ## 中文
